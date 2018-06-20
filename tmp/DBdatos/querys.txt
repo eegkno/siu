@@ -1,0 +1,24 @@
+/ query para hacer la seleccion de las estiquetas en un idioma
+
+select sal.label_number,sal.label_name  from (siu_admin_label sal inner join siu_admin_language_label sall on sall.label_id=sal.label_id and sall.lang_id=2);
+
+/query para obtener los modulos habilitados para los usuarios
+select 
+	sal.label_number,sam.mod_link 
+from 
+	(( siu_admin_module_user samu 
+inner join 
+	siu_admin_module sam 
+on 
+	sam.mod_id=samu.mod_id 
+and 
+	samu.user_login='ergaca' 
+and 
+	sam. mod_status='1' and sam.mod_name!='Administracion' ) inner join siu_admin_label sal on sal.label_id = sam.label_id);
+
+
+
+
+select  sal.label_number,sam.mod_linkadm 
+from ( siu_admin_module sam  inner join siu_admin_label sal on sam.label_id=sal.label_id ) 
+where mod_name != 'Administrador' and mod_linkadm != ''

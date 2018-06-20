@@ -1,0 +1,70 @@
+1;00001;Administracion SIU;1
+2;00002;Usuario;2
+3;00003;Password;2
+4;00004;Indice;2
+5;00005;Administracion;2
+6;00006;Usuarios;1
+7;00007;Consultar;2
+8;00008;Modulos;1
+9;00009;Borrar;3
+10;00010;Enviar;3
+11;00011;Datos personales;2
+12;00012;Cambio de password;2
+13;00013;Perfiles;2
+14;00014;SIU;2
+15;00015;Cerrar Sesion;2
+16;00016;Agregar;2
+17;00017;Salir;1
+18;00018;Nombre;2
+19;00019;Apellido paterno;2
+20;00020;Apellido Materno;2
+21;00021;Estatus;2
+22;00022;Activado;2
+23;00023;Desactivado;2
+24;00024;El usuario se ha agregado con exito;1
+25;00025;ERROR : El usuario no se agrego;1
+26;00026;Servicios;2
+27;00027;Cursos;2
+28;00028;Conexiones;2
+29;00029;Alumnos;2
+30;00030;Estadisticas;2
+31;00031;Direciones_IP;2
+32;00032;Equipo;2
+33;00033;SIU;2
+34;00034;Caracter invalido!!!;2
+35;00035;Agregar software;2
+36;00036;Quitar software;2
+37;00037;ERROR : No existe un usuario con ese login;2
+38;00038;Confirmar Password;2
+39;00039;Ingresa Password;2
+40;00040;Los passwords no coinciden;2
+41;00041;Actualizacion realizada;2
+42;00042;Habilitar usuario;2
+43;00043;Deshabilitar usuario;2
+44;00044;Ruta SIU;2
+45;00045;Id Etiqueta;2
+46;00046;ERROR: El modulo no se agrego;2
+47;00047;Activar/Desactivar;2
+48;00048;Ruta Admon;2
+49;00049;Ingresa login;2
+50;00050;Ingresa nombre del modulo;2
+51;00051;Ingresa Ruta SIU;2
+52;00052;INgresa Ruta Admon;2
+53;00053;Ingresa Id Etiqueta;2
+54;00054;Ingresa nombre del usuario;2
+55;00055;Ingresa apellido paterno;2
+56;00056;Ingresa apellido materno;2
+57;00057;ERROR: No existe el usuario;2
+58;00058;ERROR: El usuario no tiene acceso al modulo de administracion;2
+59;00059;ERROR: Hay un usuario dentro del systema con el mismo login;2
+60;00060;ERROR: El password del usuario es incorrecto;2
+61;00061;ERROR: El usuario no tiene modulos asignados;2
+62;00062;ERROR: Sesion inactiva;2
+63;00063;ERROR: No se actualizo el perfil;2
+64;00064;ERROR: No se habilito el usuario;2
+65;00065;ERROR: No se deshabilito el usuario;2
+66;00066;ERROR: No se borro el modulo;2
+67;00067;ERROR: No se actualizo el modulo;2
+68;00068;Administrar;2
+
+

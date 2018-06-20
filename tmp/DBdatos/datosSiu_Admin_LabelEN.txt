@@ -1,0 +1,68 @@
+69;00001;SIU Management;1
+70;00002;Login;2
+71;00003;Password;2
+72;00004;Index;2
+73;00005;Management;2
+74;00006;Users;1
+75;00007;Search;2
+76;00008;Modules;1
+77;00009;Clear;3
+78;00010;Send;3
+79;00011;Personal Infrormation;2
+80;00012;Password change;2
+81;00013;Profiles;2
+82;00014;SIU;3
+83;00015;Close Session;3
+84;00016;Add;3
+85;00017;Exit;1
+86;00018;Given Name;3
+87;00019;Family name;3
+88;00020;Second family name;3
+89;00021;Status;3
+90;00022;Enabled;3
+91;00023;Disabled;3
+92;00024;The user has been added successfully;1
+93;00025;ERROR: User has not been added;1
+94;00026;Services;2
+95;00027;Courses;2
+96;00028;Connection;2
+97;00029;Students;2
+98;00030;Statistics;2
+99;00031;IP Addresses;2
+100;00032;Equipment;2
+101;00033;SIU;2
+102;00034;Invalid character;2
+103;00035;Add Software;2
+104;00036;Clear Software;2
+105;00037;ERROR:There does not exist a user with that login;2
+106;00038;Confirm password;2
+107;00039;Enter password;2
+108;00040;Passwords do not match;2
+109;00041; successful Update;2
+110;00042;user Enable;2
+111;00043;user Disable;2
+112;00044;SIU URL ;2
+113;00045;Label id;2
+114;00046;ERROR: Module has not been added;2
+115;00047;Enable/Disable;2
+116;00048;Admin URL;2
+117;00049;Enter login;2
+118;00050;Enter module's name;2
+119;00051;Enter SIU URL;2
+120;00052;Enter Admin URL;2
+121;00053;Enter Label id;2
+122;00054;Enter user's given name;2
+123;00055;Enter family name;2
+124;00056;Enter second family name;2
+125;00057;ERROR:User does not exist;2
+126;00058;ERROR:User does not have access to management module;2
+127;00059;ERROR:User is logged in;2
+128;00060;ERROR:User's password is wrong;2
+129;00061;ERROR:user does not have assigned modules;2
+130;00062;ERROR:Disable session;2
+131;00063;ERROR:Profile has not been updated;2
+132;00064;ERROR:User has not been enabled;2
+133;00065;ERROR:User has not been disabled;2
+134;00066;ERROR:Module has not been deleted;2
+135;00067;ERROR:Module has not been updated;2
+136;00068;Management;2

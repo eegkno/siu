@@ -1,0 +1,1483 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN' 'http://java.sun.com/dtd/web-app_2_3.dtd'>
+
+<web-app>
+
+
+  <display-name>siu</display-name>
+
+  <description>sistema de informacion de usuarios.</description>
+
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los parametros de la base de datos en el Context                                   -->
+<!-- ******************************************************************************************* -->
+
+
+<!--
+	Esta etiqueta sirve para definir como se llama la varable que se va a encargar de cargar el
+	archivo, en este caso se llama DBParameters y el archivo se llama DBParameters.txt
+-->
+
+  <context-param>
+    <param-name>DBParameters</param-name>
+    <param-value>files/DBParameters.txt</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>datos</param-name>
+    <param-value>files/datos.txt</param-value>
+  </context-param>
+
+<!--
+	Esta etiqueta sirve para definir El servlet context listener, que contiene el archivo que
+      	se encarga de cargar el context
+-->
+
+  <listener>
+    <listener-class>siu.administration.common.database.Siu_Admin_DBContextFile</listener-class>
+  </listener>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+
+<!--                       D E C L A R A C I O N   C L A S E S  D E  N E G O C I O               -->
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando las clases de negocio del paquete siu.administration.common.utility              -->
+<!-- ******************************************************************************************* -->
+
+  <servlet>
+    <servlet-name>Siu_ContainerLabel</servlet-name>
+    <display-name>siu.administration.common.utility.Siu_ContainerLabel</display-name>
+    <servlet-class>siu.administration.common.utility.Siu_ContainerLabel</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Container</servlet-name>
+    <display-name>siu.administration.common.utility.Siu_Container</display-name>
+    <servlet-class>siu.administration.common.utility.Siu_Container</servlet-class>
+  </servlet>
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando las clases de negocio del paquete siu.administration.common.database             -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet>
+    <servlet-name>Siu_Admin_DBConector</servlet-name>
+    <display-name>siu.administration.common.database.Siu_Admin_DBConector</display-name>
+    <servlet-class>siu.administration.common.database.Siu_Admin_DBConector</servlet-class>
+  </servlet>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando las clases de negocio del paquete siu.administration.business.user               -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet>
+    <servlet-name>Siu_Admin_BusinessUser</servlet-name>
+    <display-name>siu.administration.business.user.Siu_Admin_BusinessUser</display-name>
+    <servlet-class>siu.administration.business.user.Siu_Admin_BusinessUser</servlet-class>
+  </servlet>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!--                      D E C L A R A C I O N    J A V A  B E A N S                            -->
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los java beans del paquete siu.administration.beans.user                         -->
+<!-- ******************************************************************************************* -->
+
+  <servlet>
+    <servlet-name>Siu_Admin_User</servlet-name>
+    <display-name>siu.administration.beans.user.Siu_Admin_User</display-name>
+    <servlet-class>siu.administration.beans.user.Siu_Admin_User</servlet-class>
+  </servlet>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!--                       D E C L A R A C I O N   S E R V L E T S                               -->
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los sevlets del paquete siu.administratios.servlet                               -->
+<!-- ******************************************************************************************* -->
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletIndex</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletIndex</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletIndex</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletValidation</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletValidation</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletValidation</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletMain</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletMain</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletMain</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletPresentation</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletPresentation</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletPresentation</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletAddUser</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletAddUser</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletAddUser</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletTest</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletTest</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletTest</servlet-class>
+  </servlet>
+
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletInsertUser</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletInsertUser</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletInsertUser</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletConsultUser</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletConsultUser</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletConsultUser</servlet-class>
+  </servlet>
+
+  
+  <servlet>
+    <servlet-name>Siu_Admin_ServletResponseConsultUser</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletResponseConsultUser</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletResponseConsultUser</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletAuth</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletAuth</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletAuth</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletValidateAuth</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletValidateAuth</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletValidateAuth</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletMainAuth</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletMainAuth</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletMainAuth</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletChangePassUser</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletChangePassUser</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletChangePassUser</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletUpdateProfile</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletUpdateProfile</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletUpdateProfile</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletAddModule</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletAddModule</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletAddModule</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletInsertModule</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletInsertModule</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletInsertModule</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletConsultModule</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletConsultModule</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletConsultModule</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletUpdateModule</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletUpdateModule</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletUpdateModule</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletDeleteModule</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletDeleteModule</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletDeleteModule</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletUpdateDeleteModule</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletUpdateDeleteModule</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletUpdateDeleteModule</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletDestroy</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletDestroy</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletDestroy</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Admin_ServletAdmonModule</servlet-name>
+    <display-name>siu.administration.servlet.Siu_Admin_ServletAdmonModule</display-name>
+    <servlet-class>siu.administration.servlet.Siu_Admin_ServletAdmonModule</servlet-class>
+  </servlet>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los sevlets del paquete siu.connection.servlet                                   -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet>
+    <servlet-name>Siu_Conn_ServletTest</servlet-name>
+    <display-name>siu.connection.servlet.Siu_Conn_ServletTest</display-name>
+    <servlet-class>siu.connection.servlet.Siu_Conn_ServletTest</servlet-class>
+  </servlet>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los sevlets del paquete siu.courses.servlet                                      -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet>
+    <servlet-name>Siu_Course_ServletTest</servlet-name>
+    <display-name>siu.courses.servlet.Siu_Course_ServletTest</display-name>
+    <servlet-class>siu.courses.servlet.Siu_Course_ServletTest</servlet-class>
+  </servlet>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los sevlets del paquete siu.equipment.servlet                                    -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet>
+    <servlet-name>Siu_Equip_ServletTest</servlet-name>
+    <display-name>siu.equipment.servlet.Siu_Equip_ServletTest</display-name>
+    <servlet-class>siu.equipment.servlet.Siu_Equip_ServletTest</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Equip_ServletSoftware</servlet-name>
+    <display-name>siu.equipment.servlet.Siu_Equip_ServletSoftware</display-name>
+    <servlet-class>siu.equipment.servlet.Siu_Equip_ServletSoftware</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Equip_ServletAdmSoftware</servlet-name>
+    <display-name>siu.equipment.servlet.Siu_Equip_ServletAdmSoftware</display-name>
+    <servlet-class>siu.equipment.servlet.Siu_Equip_ServletAdmSoftware</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Equip_ServletUpdateSoftware</servlet-name>
+    <display-name>siu.equipment.servlet.Siu_Equip_ServletUpdateSoftware</display-name>
+    <servlet-class>siu.equipment.servlet.Siu_Equip_ServletUpdateSoftware</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Equip_ServletAdmHardware</servlet-name>
+    <display-name>siu.equipment.servlet.Siu_Equip_ServletAdmHardware</display-name>
+    <servlet-class>siu.equipment.servlet.Siu_Equip_ServletAdmHardware</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Equip_ServletUpdateHardware</servlet-name>
+    <display-name>siu.equipment.servlet.Siu_Equip_ServletUpdateHardware</display-name>
+    <servlet-class>siu.equipment.servlet.Siu_Equip_ServletUpdateHardware</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Equip_ServletHardware</servlet-name>
+    <display-name>siu.equipment.servlet.Siu_Equip_ServletHardware</display-name>
+    <servlet-class>siu.equipment.servlet.Siu_Equip_ServletHardware</servlet-class>
+  </servlet>
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los sevlets del paquete siu.ipAdress.servlet                                     -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet>
+    <servlet-name>Siu_Ip_ServletTest</servlet-name>
+    <display-name>siu.ipAdress.servlet.Siu_Ip_ServletTest</display-name>
+    <servlet-class>siu.ipAdress.servlet.Siu_Ip_ServletTest</servlet-class>
+  </servlet>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los sevlets del paquete siu.statistics.servlet                                   -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet>
+    <servlet-name>Siu_Stat_ServletTest</servlet-name>
+    <display-name>siu.statistics.servlet.Siu_Stat_ServletTest</display-name>
+    <servlet-class>siu.statistics.servlet.Siu_Stat_ServletTest</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Stat_ServletAdmStatistics</servlet-name>
+    <display-name>siu.statistics.servlet.Siu_Stat_ServletAdmStatistics</display-name>
+    <servlet-class>siu.statistics.servlet.Siu_Stat_ServletAdmStatistics</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Stat_ServletUpdateSemester</servlet-name>
+    <display-name>siu.statistics.servlet.Siu_Stat_ServletUpdateSemester</display-name>
+    <servlet-class>siu.statistics.servlet.Siu_Stat_ServletUpdateSemester</servlet-class>
+  </servlet>
+
+
+  <servlet>
+    <servlet-name>Siu_Stat_ServletCourse</servlet-name>
+    <display-name>siu.statistics.servlet.Siu_Stat_ServletCourse</display-name>
+    <servlet-class>siu.statistics.servlet.Siu_Stat_ServletCourse</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Stat_ServletConsultCourse</servlet-name>
+    <display-name>siu.statistics.servlet.Siu_Stat_ServletConsultCourse</display-name>
+    <servlet-class>siu.statistics.servlet.Siu_Stat_ServletConsultCourse</servlet-class>
+  </servlet>
+
+
+  <servlet>
+    <servlet-name>Siu_Stat_ServletGraphic</servlet-name>
+    <display-name>siu.statistics.servlet.Siu_Stat_ServletGraphic</display-name>
+    <servlet-class>siu.statistics.servlet.Siu_Stat_ServletGraphic</servlet-class>
+  </servlet>
+  
+
+   <servlet>
+    <servlet-name>Siu_Stat_ServletSetGraphic</servlet-name>
+    <display-name>siu.statistics.servlet.Siu_Stat_ServletSetGraphic</display-name>
+    <servlet-class>siu.statistics.servlet.Siu_Stat_ServletSetGraphic</servlet-class>
+  </servlet>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los sevlets del paquete siu.students.servlet                                     -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet>
+    <servlet-name>Siu_Stud_ServletTest</servlet-name>
+    <display-name>siu.students.servlet.Siu_Stud_ServletTest</display-name>
+    <servlet-class>siu.students.servlet.Siu_Stud_ServletTest</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Stud_ServletStudents</servlet-name>
+    <display-name>siu.students.servlet.Siu_Stud_ServletStudents</display-name>
+    <servlet-class>siu.students.servlet.Siu_Stud_ServletStudents</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Stud_ServletGetStudents</servlet-name>
+    <display-name>siu.students.servlet.Siu_Stud_ServletGetStudents</display-name>
+    <servlet-class>siu.students.servlet.Siu_Stud_ServletGetStudents</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Stud_ServletStudentsStatistics</servlet-name>
+    <display-name>siu.students.servlet.Siu_Stud_ServletStudentsStatistics</display-name>
+    <servlet-class>siu.students.servlet.Siu_Stud_ServletStudentsStatistics</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Stud_ServletGetStatistics</servlet-name>
+    <display-name>siu.students.servlet.Siu_Stud_ServletGetStatistics</display-name>
+    <servlet-class>siu.students.servlet.Siu_Stud_ServletGetStatistics</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Siu_Stud_ServletReportStatistics</servlet-name>
+    <display-name>siu.students.servlet.Siu_Stud_ServletReportStatistics</display-name>
+    <servlet-class>siu.students.servlet.Siu_Stud_ServletReportStatistics</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>Siu_Stud_ServletSetReport</servlet-name>
+    <display-name>siu.students.servlet.Siu_Stud_ServletSetReport</display-name>
+    <servlet-class>siu.students.servlet.Siu_Stud_ServletSetReport</servlet-class>
+  </servlet>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+
+
+
+
+
+<!--                         D E C L A R A C I O N    J S P                                      -->
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los jsp's del paquete jsp.administration.common                                  -->
+<!-- ******************************************************************************************* -->
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspAccess</servlet-name>
+    <display-name>Siu_Admin_JspAccess</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspAccess.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspMain</servlet-name>
+    <display-name>Siu_Admin_JspMain</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspMain.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspIndex</servlet-name>
+    <display-name>Siu_Admin_JspIndex</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspIndex.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspPresentation</servlet-name>
+    <display-name>Siu_Admin_JspPresentation</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspPresentation.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspAddUser</servlet-name>
+    <display-name>Siu_Admin_JspAddUser</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspAddUser.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspConsultUser</servlet-name>
+    <display-name>Siu_Admin_JspConsultUser</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspConsultUser.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspPerInfUser</servlet-name>
+    <display-name>Siu_Admin_JspPerInfUser</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspPerInfUser.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspAuth</servlet-name>
+    <display-name>Siu_Admin_JspAuth</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspAuth.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspMainAuth</servlet-name>
+    <display-name>Siu_Admin_JspMainAuth</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspMainAuth.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspIndexAuth</servlet-name>
+    <display-name>Siu_Admin_JspIndexAuth</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspIndexAuth.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspUpdateUser</servlet-name>
+    <display-name>Siu_Admin_JspUpdateUser</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspUpdateUser.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspPassUser</servlet-name>
+    <display-name>Siu_Admin_JspPassUser</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspPassUser.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspPassUpdateUser</servlet-name>
+    <display-name>Siu_Admin_JspPassUpdateUser</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspPassUpdateUser.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspAddModule</servlet-name>
+    <display-name>Siu_Admin_JspAddModule</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspAddModule.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspUpdateModule</servlet-name>
+    <display-name>Siu_Admin_JspUpdateModule</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspUpdateModule.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspConsultModule</servlet-name>
+    <display-name>Siu_Admin_JspConsultModule</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspConsultModule.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspDeleteModule</servlet-name>
+    <display-name>Siu_Admin_JspDeleteModule</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspDeleteModule.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspAdmonModule</servlet-name>
+    <display-name>Siu_Admin_JspAdmonModule</display-name>
+    <jsp-file>/jsp/administration/common/Siu_Admin_JspAdmonModule.jsp</jsp-file>
+   </servlet>
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los jsp's del paquete jsp.administration.error                                   -->
+<!-- ******************************************************************************************* -->
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspError</servlet-name>
+    <display-name>Siu_Admin_JspError</display-name>
+    <jsp-file>/jsp/administration/error/Siu_Admin_JspError.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspConsultUserError</servlet-name>
+    <display-name>Siu_Admin_JspConsultUserError</display-name>
+    <jsp-file>/jsp/administration/error/Siu_Admin_JspConsultUserError.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspUpdateUserError</servlet-name>
+    <display-name>Siu_Admin_JspUpdateUserError</display-name>
+    <jsp-file>/jsp/administration/error/Siu_Admin_JspUpdateUserError.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Admin_JspUpdateModuleError</servlet-name>
+    <display-name>Siu_Admin_JspUpdateModuleError</display-name>
+    <jsp-file>/jsp/administration/error/Siu_Admin_JspUpdateModuleError.jsp</jsp-file>
+   </servlet>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los jsp's del paquete jsp.connection.common                                      -->
+<!-- ******************************************************************************************* -->
+
+
+   <servlet>
+    <servlet-name>pruebaConnection</servlet-name>
+    <display-name>pruebaConnection</display-name>
+    <jsp-file>/jsp/connection/common/pruebaConnection.jsp</jsp-file>
+   </servlet>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los jsp's del paquete jsp.courses.common                                         -->
+<!-- ******************************************************************************************* -->
+
+   <servlet>
+    <servlet-name>pruebaCourses</servlet-name>
+    <display-name>pruebaCourses</display-name>
+    <jsp-file>/jsp/courses/common/pruebaCourses.jsp</jsp-file>
+   </servlet>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los jsp's del paquete jsp.equipment.common                                       -->
+<!-- ******************************************************************************************* -->
+
+   <servlet>
+    <servlet-name>pruebaEquipment</servlet-name>
+    <display-name>pruebaEquipment</display-name>
+    <jsp-file>/jsp/equipment/common/pruebaEquipment.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Equip_JspSoftware</servlet-name>
+    <display-name>Siu_Equip_JspSoftware</display-name>
+    <jsp-file>/jsp/equipment/common/Siu_Equip_JspSoftware.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Equip_JspAdmSoftware</servlet-name>
+    <display-name>Siu_Equip_JspAdmSoftware</display-name>
+    <jsp-file>/jsp/equipment/common/Siu_Equip_JspAdmSoftware.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Equip_JspAdmHardware</servlet-name>
+    <display-name>Siu_Equip_JspAdmHardware</display-name>
+    <jsp-file>/jsp/equipment/common/Siu_Equip_JspAdmHardware.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Equip_JspHardware</servlet-name>
+    <display-name>Siu_Equip_JspHardware</display-name>
+    <jsp-file>/jsp/equipment/common/Siu_Equip_JspHardware.jsp</jsp-file>
+   </servlet>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los jsp's del paquete jsp.ipAdress.common                                       -->
+<!-- ******************************************************************************************* -->
+
+   <servlet>
+    <servlet-name>pruebaIpAdress</servlet-name>
+    <display-name>pruebaIpAdress</display-name>
+    <jsp-file>/jsp/ipAdress/common/pruebaIpAdress.jsp</jsp-file>
+   </servlet>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los jsp's del paquete jsp.statistics.common                                      -->
+<!-- ******************************************************************************************* -->
+
+
+   <servlet>
+    <servlet-name>pruebaStatistics</servlet-name>
+    <display-name>pruebaStatistics</display-name>
+    <jsp-file>/jsp/statistics/common/pruebaStatistics.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Stat_JspAddSemester</servlet-name>
+    <display-name>Siu_Stat_JspAddSemester</display-name>
+    <jsp-file>/jsp/statistics/common/Siu_Stat_JspAddSemester.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Stat_JspCourses</servlet-name>
+    <display-name>Siu_Stat_JspCourses</display-name>
+    <jsp-file>/jsp/statistics/common/Siu_Stat_JspCourses.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Stat_JspShowCourse</servlet-name>
+    <display-name>Siu_Stat_JspShowCourse</display-name>
+    <jsp-file>/jsp/statistics/common/Siu_Stat_JspShowCourse.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Stat_JspGraphics</servlet-name>
+    <display-name>Siu_Stat_JspGraphics</display-name>
+    <jsp-file>/jsp/statistics/common/Siu_Stat_JspGraphics.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Stat_JspGetGraphics</servlet-name>
+    <display-name>Siu_Stat_JspGetGraphics</display-name>
+    <jsp-file>/jsp/statistics/common/Siu_Stat_JspGetGraphics.jsp</jsp-file>
+   </servlet>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Declarando los jsp's del paquete jsp.students.common                                        -->
+<!-- ******************************************************************************************* -->
+
+   <servlet>
+    <servlet-name>pruebaStudents</servlet-name>
+    <display-name>pruebaStudents</display-name>
+    <jsp-file>/jsp/students/common/prueba.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Stud_JspStudents</servlet-name>
+    <display-name>Siu_Stud_JspStudents</display-name>
+    <jsp-file>/jsp/students/common/Siu_Stud_JspStudents.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Stud_JspGetStudents</servlet-name>
+    <display-name>Siu_Stud_JspGetStudents</display-name>
+    <jsp-file>/jsp/students/common/Siu_Stud_JspGetStudents.jsp</jsp-file>
+   </servlet>
+
+   <servlet>
+    <servlet-name>Siu_Stud_JspStudentsStatistics</servlet-name>
+    <display-name>Siu_Stud_JspStudentsStatistics</display-name>
+    <jsp-file>/jsp/students/common/Siu_Stud_JspStudentsStatistics.jsp</jsp-file>
+   </servlet>
+
+
+   <servlet>
+    <servlet-name>Siu_Stud_JspGetStudentsStatistics</servlet-name>
+    <display-name>Siu_Stud_JspGetStudentsStatistics</display-name>
+    <jsp-file>/jsp/students/common/Siu_Stud_JspGetStudentsStatistics.jsp</jsp-file>
+   </servlet>
+
+
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+
+
+
+
+<!--                        M A P E O   C L A S E S   D E   N E G O C I O                        -->
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando las clases de negocio del paquete siu.administration.common.utility                -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_ContainerLabel</servlet-name>
+    <url-pattern>/siu.administration.common.utility.Siu_ContainerLabel</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Container</servlet-name>
+    <url-pattern>/siu.administration.common.utility.Siu_Container</url-pattern>
+  </servlet-mapping>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando las clases de negocio del paquete siu.administration.common.database               -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_DBConector</servlet-name>
+    <url-pattern>/siu.administration.common.databse.Siu_Admin_DBConector</url-pattern>
+  </servlet-mapping>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando las clases de negocio del paquete siu.administration.business.user                 -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_BusinessUser</servlet-name>
+    <url-pattern>/siu.administration.business.user.Siu_Admin_BusinessUser</url-pattern>
+  </servlet-mapping>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+
+<!--                        M A P E O   S E R V L E T S                                          -->
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los servlets del paquete siu.administration.servlet                                -->
+<!-- ******************************************************************************************* -->
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletIndex</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletIndex</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletValidation</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletValidation</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletMain</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletMain</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletPresentation</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletPresentation</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletAddUser</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletAddUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletTest</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletTest</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletInsertUser</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletInsertUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletConsultUser</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletConsultUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletResponseConsultUser</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletResponseConsultUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletAuth</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletAuth</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletValidateAuth</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletValidateAuth</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletMainAuth</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletMainAuth</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletChangePassUser</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletChangePassUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletUpdateProfile</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletUpdateProfile</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletAddModule</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletAddModule</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletInsertModule</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletInsertModule</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletConsultModule</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletConsultModule</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletUpdateModule</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletUpdateModule</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletDeleteModule</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletDeleteModule</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletUpdateDeleteModule</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletUpdateDeleteModule</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletDestroy</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletDestroy</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_ServletAdmonModule</servlet-name>
+    <url-pattern>/siu.administration.servlet.Siu_Admin_ServletAdmonModule</url-pattern>
+  </servlet-mapping>
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los servlets del paquete siu.connection.servlet                                    -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Conn_ServletTest</servlet-name>
+    <url-pattern>/siu.connection.servlet.Siu_Conn_ServletTest</url-pattern>
+  </servlet-mapping>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los servlets del paquete siu.courses.servlet                                       -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Course_ServletTest</servlet-name>
+    <url-pattern>/siu.courses.servlet.Siu_Course_ServletTest</url-pattern>
+  </servlet-mapping>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los servlets del paquete siu.equipment.servlet                                     -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Equip_ServletTest</servlet-name>
+    <url-pattern>/siu.equipment.servlet.Siu_Equip_ServletTest</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Equip_ServletSoftware</servlet-name>
+    <url-pattern>/siu.equipment.servlet.Siu_Equip_ServletSoftware</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Equip_ServletAdmSoftware</servlet-name>
+    <url-pattern>/siu.equipment.servlet.Siu_Equip_ServletAdmSoftware</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Equip_ServletUpdateSoftware</servlet-name>
+    <url-pattern>/siu.equipment.servlet.Siu_Equip_ServletUpdateSoftware</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Equip_ServletAdmHardware</servlet-name>
+    <url-pattern>/siu.equipment.servlet.Siu_Equip_ServletAdmHardware</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Equip_ServletUpdateHardware</servlet-name>
+    <url-pattern>/siu.equipment.servlet.Siu_Equip_ServletUpdateHardware</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Equip_ServletHardware</servlet-name>
+    <url-pattern>/siu.equipment.servlet.Siu_Equip_ServletHardware</url-pattern>
+  </servlet-mapping>
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los servlets del paquete siu.ipAdress.servlet                                      -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Ip_ServletTest</servlet-name>
+    <url-pattern>/siu.ipAdress.servlet.Siu_Ip_ServletTest</url-pattern>
+  </servlet-mapping>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los servlets del paquete siu.statistics.servlet                                    -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stat_ServletTest</servlet-name>
+    <url-pattern>/siu.statistics.servlet.Siu_Stat_ServletTest</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stat_ServletAdmStatistics</servlet-name>
+    <url-pattern>/siu.statistics.servlet.Siu_Stat_ServletAdmStatistics</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stat_ServletUpdateSemester</servlet-name>
+    <url-pattern>/siu.statistics.servlet.Siu_Stat_ServletUpdateSemester</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stat_ServletCourse</servlet-name>
+    <url-pattern>/siu.statistics.servlet.Siu_Stat_ServletCourse</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stat_ServletConsultCourse</servlet-name>
+    <url-pattern>/siu.statistics.servlet.Siu_Stat_ServletConsultCourse</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stat_ServletGraphic</servlet-name>
+    <url-pattern>/siu.statistics.servlet.Siu_Stat_ServletGraphic</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stat_ServletSetGraphic</servlet-name>
+    <url-pattern>/siu.statistics.servlet.Siu_Stat_ServletSetGraphic</url-pattern>
+  </servlet-mapping>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los servlets del paquete siu.students.servlet                                    -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stud_ServletTest</servlet-name>
+    <url-pattern>/siu.students.servlet.Siu_Stud_ServletTest</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stud_ServletStudents</servlet-name>
+    <url-pattern>/siu.students.servlet.Siu_Stud_ServletStudents</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stud_ServletGetStudents</servlet-name>
+    <url-pattern>/siu.students.servlet.Siu_Stud_ServletGetStudents</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stud_ServletStudentsStatistics</servlet-name>
+    <url-pattern>/siu.students.servlet.Siu_Stud_ServletStudentsStatistics</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stud_ServletGetStatistics</servlet-name>
+    <url-pattern>/siu.students.servlet.Siu_Stud_ServletGetStatistics</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stud_ServletReportStatistics</servlet-name>
+    <url-pattern>/siu.students.servlet.Siu_Stud_ServletReportStatistics</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stud_ServletSetReport</servlet-name>
+    <url-pattern>/siu.students.servlet.Siu_Stud_ServletSetReport</url-pattern>
+  </servlet-mapping>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+
+<!--                        M A P E O   J A V A   B E A N S                                      -->
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los beans del paquete siu.administration.beans.database.language                   -->
+<!-- ******************************************************************************************* -->
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_User</servlet-name>
+    <url-pattern>/siu.administration.beans.user.Siu_Admin_User</url-pattern>
+  </servlet-mapping>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!--                        M A P E O   J S P ' S                                               -->
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los jsp del paquete jsp.administration.common                                          -->
+<!-- ******************************************************************************************* -->
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspAccess</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspAccess</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspMain</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspMain</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspIndex</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspIndex</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspPresentation</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspPresentation</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspAddUser</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspAddUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspConsultUser</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspConsultUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspPerInfUser</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspPerInfUser</url-pattern>
+  </servlet-mapping>
+
+ <servlet-mapping>
+    <servlet-name>Siu_Admin_JspAuth</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspAuth</url-pattern>
+  </servlet-mapping>
+
+ <servlet-mapping>
+    <servlet-name>Siu_Admin_JspMainAuth</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspMainAuth</url-pattern>
+  </servlet-mapping>
+
+ <servlet-mapping>
+    <servlet-name>Siu_Admin_JspIndexAuth</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspIndexAuth</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspUpdateUser</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspUpdateUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspPassUser</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspPassUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspPassUpdateUser</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspPassUpdateUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspAddModule</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspAddModule</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspUpdateModule</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspUpdateModule</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspConsultModule</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspConsultModule</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspDeleteModule</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspDeleteModule</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspAdmonModule</servlet-name>
+    <url-pattern>/jsp/administration/common/Siu_Admin_JspAdmonModule</url-pattern>
+  </servlet-mapping>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los jsp del paquete jsp.administration.error                                       -->
+<!-- ******************************************************************************************* -->
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspError</servlet-name>
+    <url-pattern>/jsp/administration/error/Siu_Admin_JspError</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspUpdateUserError</servlet-name>
+    <url-pattern>/jsp/administration/error/Siu_Admin_JspUpdateUserError</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspConsultUserError</servlet-name>
+    <url-pattern>/jsp/administration/error/Siu_Admin_JspConsultUserError</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Siu_Admin_JspUpdateModuleError</servlet-name>
+    <url-pattern>/jsp/administration/error/Siu_Admin_JspUpdateModuleError</url-pattern>
+  </servlet-mapping>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los jsp del paquete jsp.connection.common                                          -->
+<!-- ******************************************************************************************* -->
+
+
+  <servlet-mapping>
+    <servlet-name>pruebaConnection</servlet-name>
+    <url-pattern>/jsp/connection/common/pruebaConnection</url-pattern>
+  </servlet-mapping>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los jsp del paquete jsp.courses.common                                             -->
+<!-- ******************************************************************************************* -->
+
+  <servlet-mapping>
+    <servlet-name>pruebaCourses</servlet-name>
+    <url-pattern>/jsp/courses/common/pruebaCourses</url-pattern>
+  </servlet-mapping>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los jsp del paquete jsp.equipment.common                                           -->
+<!-- ******************************************************************************************* -->
+
+  <servlet-mapping>
+    <servlet-name>pruebaEquipment</servlet-name>
+    <url-pattern>/jsp/equipment/common/pruebaEquipment</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Equip_JspSoftware</servlet-name>
+    <url-pattern>/jsp/equipment/common/Siu_Equip_JspSoftware</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Equip_JspAdmSoftware</servlet-name>
+    <url-pattern>/jsp/equipment/common/Siu_Equip_JspAdmSoftware</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Equip_JspAdmHardware</servlet-name>
+    <url-pattern>/jsp/equipment/common/Siu_Equip_JspAdmHardware</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Equip_JspHardware</servlet-name>
+    <url-pattern>/jsp/equipment/common/Siu_Equip_JspHardware</url-pattern>
+  </servlet-mapping>
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los jsp del paquete jsp.ipAdress.common                                            -->
+<!-- ******************************************************************************************* -->
+
+  <servlet-mapping>
+    <servlet-name>pruebaIpAdress</servlet-name>
+    <url-pattern>/jsp/ipAdress/common/pruebaIpAdress</url-pattern>
+  </servlet-mapping>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los jsp del paquete jsp.statistics.common                                          -->
+<!-- ******************************************************************************************* -->
+
+  <servlet-mapping>
+    <servlet-name>pruebaStatistics</servlet-name>
+    <url-pattern>/jsp/statistics/common/pruebaStatistics</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stat_JspAddSemester</servlet-name>
+    <url-pattern>/jsp/statistics/common/Siu_Stat_JspAddSemester</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stat_JspCourses</servlet-name>
+    <url-pattern>/jsp/statistics/common/Siu_Stat_JspCourses</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stat_JspShowCourse</servlet-name>
+    <url-pattern>/jsp/statistics/common/Siu_Stat_JspShowCourse</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stat_JspGraphics</servlet-name>
+    <url-pattern>/jsp/statistics/common/Siu_Stat_JspGraphics</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stat_JspGetGraphics</servlet-name>
+    <url-pattern>/jsp/statistics/common/Siu_Stat_JspGetGraphics</url-pattern>
+  </servlet-mapping>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando los jsp del paquete jsp.students.common                                            -->
+<!-- ******************************************************************************************* -->
+
+  <servlet-mapping>
+    <servlet-name>pruebaStudents</servlet-name>
+    <url-pattern>/jsp/students/common/pruebaStudents</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stud_JspStudents</servlet-name>
+    <url-pattern>/jsp/students/common/Siu_Stud_JspStudents</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stud_JspGetStudents</servlet-name>
+    <url-pattern>/jsp/students/common/Siu_Stud_JspGetStudents</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stud_JspStudentsStatistics</servlet-name>
+    <url-pattern>/jsp/students/common/Siu_Stud_JspStudentsStatistics</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Siu_Stud_JspGetStudentsStatistics</servlet-name>
+    <url-pattern>/jsp/students/common/Siu_Stud_JspGetStudentsStatistics</url-pattern>
+  </servlet-mapping>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+<!-- ******************************************************************************************* -->
+<!-- Para darle un tiempo determinado a la sesion                                                -->
+<!-- ******************************************************************************************* -->
+
+  <session-config>
+    <session-timeout>555</session-timeout>
+  </session-config>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+
+
+<!-- ******************************************************************************************* -->
+<!-- Mapeando la pagina de inicio o de entrada de la aplicacion del sistema                      -->
+<!-- ******************************************************************************************* -->
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+
+
+</web-app>
+

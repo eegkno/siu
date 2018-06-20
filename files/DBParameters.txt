@@ -1,0 +1,6 @@
+classForName=org.postgresql.Driver
+IpDataBase=jdbc:postgresql://127.0.0.1:5432/
+dataBase=siu
+User=
+Password=
+

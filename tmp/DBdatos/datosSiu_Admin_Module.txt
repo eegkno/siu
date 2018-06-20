@@ -1,0 +1,7 @@
+1:Administracion:1:5:/siu/siu.administration.servlet.Siu_Admin_ServletValidation
+2:Equipo:1:32:/siu/siu.equipment.servlet.Siu_Equip_ServletSoftware
+3:Cursos:1:27:/siu/siu.courses.servlet.Siu_Course_ServletTest
+4:Conexiones:1:28:/siu/siu.connection.servlet.Siu_Conn_ServletTest
+5:Direcciones IP:1:31:/siu/siu.ipAdress.servlet.Siu_Ip_ServletTest
+6:Alumnos:1:29:/siu/siu.students.servlet.Siu_Stud_ServletStudents
+7:Estadisticas:1:30:/siu/siu.statistics.servlet.Siu_Stat_ServletTest
